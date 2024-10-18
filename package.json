@@ -1,0 +1,32 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-vite": "^5.0.0",
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "@fullhuman/postcss-purgecss": "^6.0.0",
+    "@surrealdb/wasm": "^1.0.2",
+    "bootstrap": "^5.3.3",
+    "sass": "^1.80.2",
+    "surrealdb": "^1.0.6"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 96,
+    "singleQuote": true,
+    "bracketSameLine": true,
+    "singleAttributePerLine": true,
+    "overrides": [
+      {
+        "files": [
+          "*.html",
+          "*.webc"
+        ],
+        "singleAttributePerLine": true,
+        "options": {
+          "parser": "html"
+        }
+      }
+    ]
+  }
+}

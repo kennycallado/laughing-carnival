@@ -1,0 +1,77 @@
+---
+admin: true
+auth: true
+
+subTitle: 'Prometeo Project'
+---
+
+<!doctype html>
+<html
+  data-bs-theme="dark"
+  lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+
+    <title @text="title + ' | ' + subTitle || subTitle"></title>
+
+    <script
+      webc:keep
+      type="module">
+      // import '/assets/favicon.ico'
+
+      import '/assets/sass/complete.scss'
+      import '/assets/js/theme.js'
+    </script>
+
+    <!--
+    <script
+      webc:keep
+      type="module">
+      // Import just what we need
+
+      // import 'bootstrap/js/dist/alert';
+      // import 'bootstrap/js/dist/button';
+      // import 'bootstrap/js/dist/carousel';
+      // import 'bootstrap/js/dist/collapse';
+      // import 'bootstrap/js/dist/dropdown';
+      // import 'bootstrap/js/dist/modal'
+      // import 'bootstrap/js/dist/popover';
+      // import 'bootstrap/js/dist/scrollspy';
+      // import 'bootstrap/js/dist/tab';
+      // import 'bootstrap/js/dist/toast';
+      // import 'bootstrap/js/dist/tooltip';
+    </script>
+    -->
+
+    <style
+      webc:keep
+      @raw="getBundle('css')"></style>
+  </head>
+
+  <body>
+    <header webc:import="./components/navbar.webc"></header>
+
+    <div class="position-relative">
+      <lib-security
+        class="position-absolute top-0"
+        :data-auth="auth"
+        :data-admin="admin"></lib-security>
+
+      <main
+        id="content"
+        class="container py-4"
+        @raw="content"></main>
+    </div>
+
+    <script
+      webc:keep
+      @raw="getBundle('js')"
+      type="module"></script>
+
+    <footer webc:import="./components/footer.webc"></footer>
+  </body>
+</html>

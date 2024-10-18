@@ -1,0 +1,19 @@
+{
+  "tasks": {
+    "dev": "eleventy --config=./eleventy.config.ts --serve --port 3000 --incremental",
+    "build": "eleventy --config=./eleventy.config.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "@std/path": "jsr:@std/path@^1.0.6"
+  },
+  "fmt": {
+    "useTabs": true,
+    "lineWidth": 96,
+    "indentWidth": 4,
+    "semiColons": false,
+    "singleQuote": true,
+    "include": ["src/", "deno.json", "package.json", "eleventy.config.ts"],
+    "exclude": ["src/**/*.html", "dist/"]
+  }
+}
